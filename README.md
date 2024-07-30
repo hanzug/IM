@@ -1,75 +1,67 @@
-##  悟空IM（让信息传递更简单）
 
-9年积累，沉淀出来的高性能通用通讯服务，支持即时通讯，站内/系统消息，消息中台，物联网通讯，音视频信令，直播弹幕，客服系统，AI通讯，即时社区等场景。
+
+高性能通用通讯服务，支持即时通讯，站内/系统消息，消息中台，物联网通讯，音视频信令，直播弹幕，客服系统，AI通讯，即时社区等场景。
 
 `本项目需要在go1.20.0或以上环境编译`
 
-#### 2.0.0-beta版本发布正式发布！（beta版本不建议上生产，生产请使用1.2.x的版本）
 
 
-分布式IM重要特性： 故障自动转移，去中心化设计，节点之间数据互备，支持集群快速自动扩容，代理节点机制
+分布式IM重要特性： 故障自动转移，去中心化设计，节点之间数据互备，支持集群快速自动扩容，代理节点机制
 
 
-[English](./README_EN.md)
+![](http://localhost:63342/markdownPreview/713228306/docs/logo.png?_ijt=jplti0t3trcq6irctv35vaufb0)
 
-<p align="center">
-<img align="left" height="110" src="./docs/logo.png">
-<ul>
-<!-- <li><strong>QQ群</strong>: <a href="#">750224611</a></li> -->
-<!-- <li><strong>微信</strong>: <a href="#">wukongimgo（备注进群）</a></li> -->
-<li><strong>官网</strong>: https://githubim.com</li>
-<li><strong>通讯协议</strong>: <a href="https://githubim.com/guide/proto.html">WuKongIM协议</a></li>
-<li><strong>提问</strong>: https://github.com/WuKongIM/WuKongIM/issues</li>
-<li><strong>文档</strong>: https://githubim.com</li>
-</ul>
-</p>
+- **官网**: https://githubim.com
+- **通讯协议**: [WuKongIM协议](https://githubim.com/guide/proto.html)
+- **提问**: https://github.com/WuKongIM/WuKongIM/issues
+- **文档**: https://githubim.com
 
-[![](https://img.shields.io/github/license/WuKongIM/WuKongIM?color=yellow&style=flat-square)](./LICENSE)
-[![](https://img.shields.io/badge/go-%3E%3D1.20-30dff3?style=flat-square&logo=go)](https://github.com/WuKongIM/WuKongIM)
-[![](https://img.shields.io/badge/go%20report-A+-brightgreen.svg?style=flat)](https://goreportcard.com/report/github.com/WuKongIM/WuKongIM)
-<a href="https://join.slack.com/t/wukongim/shared_invite/zt-22o7we8on-2iKNUmgigB9ERdF9XUivmw"><img src="https://img.shields.io/badge/Slack-99%2B-blueviolet?logo=slack&amp;logoColor=white"></a>
+[![](https://img.shields.io/github/license/WuKongIM/WuKongIM?color=yellow&style=flat-square)](file:///D:/github/IM/LICENSE) [![](https://img.shields.io/badge/go-%3E%3D1.20-30dff3?style=flat-square&logo=go)](https://github.com/WuKongIM/WuKongIM) [![](https://img.shields.io/badge/go%20report-A+-brightgreen.svg?style=flat)](https://goreportcard.com/report/github.com/WuKongIM/WuKongIM) [![](https://img.shields.io/badge/Slack-99%2B-blueviolet?logo=slack&logoColor=white)](https://join.slack.com/t/wukongim/shared_invite/zt-22o7we8on-2iKNUmgigB9ERdF9XUivmw)
 
-架构图
---------
+## 架构图
 
-![架构图](./docs/architecture/cluster.png)
+![](http://localhost:63342/markdownPreview/713228306/docs/architecture/cluster.png?_ijt=jplti0t3trcq6irctv35vaufb0)
 
+## 节点故障转移演示
 
-节点故障转移演示
---------
+![](http://localhost:63342/markdownPreview/713228306/docs/architecture/cluster-failover.webp?_ijt=jplti0t3trcq6irctv35vaufb0)
 
-![节点故障转移演示](./docs/architecture/cluster-failover.webp)
-
-演示
---------
+## 演示
 
 **聊天Demo**
 
-web聊天场景演示： http://imdemo.githubim.com
+web聊天场景演示： [http://imdemo.githubim.com](http://imdemo.githubim.com/)
 
-后端监控演示： http://monitor.githubim.com/web
-
-<!-- 愿景
---------
-
-深知开发一个即时通讯系统的复杂性，我们希望通过开源的方式，让更多的开发者可以快速的搭建自己的即时通讯系统，让信息传递更简单。 -->
+后端监控演示： [http://monitor.githubim.com/web](http://monitor.githubim.com/web)
 
 
+## 特点
 
-特点
---------
+🎦**独特性**
 
-- 📚 完全自研：自研消息数据库，消息分区永久存储，自研二进制协议(支持自定义)，重写Go底层网络库（支持百万在线的同时内存消耗低），无缝支持TCP和websocket。
-- 🚀 性能强劲：单机支持百万用户同时在线，单机16w/秒消息（包括DB操作）吞吐量,一个频道支持万人同时订阅。
-- 🔔 零依赖：没有依赖任何第三方组件，部署简单，一条命令即可启动
-- 🔐 安全：消息通道和消息内容全程加密，防中间人攻击和窜改消息内容。
-- 🧱 扩展性强：采用频道设计理念，目前支持群组频道，点对点频道，后续可以根据自己业务自定义频道可实现机器人频道，客服频道等等。
-- ⛓️ 分布式：去中心化设计，节点故障自动转移，节点之间数据互备，支持集群快速自动扩容。
+群成员无上限，轻松支持10万人群聊，消息可永久存储。
 
+📚**资源消耗低**
 
-功能特性
----------------
+自研二进制协议，心跳包只有1字节，省流量，省电量，传输更迅速。
 
+🔐**安全性**
+
+消息通道和消息内容全程加密，防中间人攻击和窜改消息内容，服务端数据实时备份，数据不丢失。
+
+🚀 **性能**
+
+基于pebble kv数据库，研发了针对于IM这种服务的特有分布式数据库，省了其他数据库为了通用性而带来的性能损耗， 因为存储快，所以消息快。
+
+🔥**高可用**
+
+通过魔改raft分布式协议，实现了自动容灾，一台机器宕机，另一台机器自动接管，对外无感知。
+
+去中心化，无单点，无中心节点，每个节点都是独立且平等的，都可以提供服务。
+
+扩容方便，只需增加机器，不需要停机，不需要迁移数据，自动按策略分配数据。
+
+## 功能特性
 
 - [x] 支持自定义消息
 - [x] 支持订阅/发布者模式
@@ -91,158 +83,140 @@ web聊天场景演示： http://imdemo.githubim.com
 - [x] 支持Windows系统(仅开发用)
 - [x] 支持流式消息，类似chatgpt的结果输出流
 - [x] 支持分布式
-    - [x] 去中心化设计，任意一个节点宕机，集群自动修复
-    - [x] 集群节点之间数据互备，任意一个节点损害，不影响数据完整性
-    - [x] 支持集群快速自动扩容
-    - [ ] 支持长连接CDN，解决跨国跨地区长连接不稳定问题
+  - [x] 去中心化设计，任意一个节点宕机，集群自动修复
+  - [x] 集群节点之间数据互备，任意一个节点损害，不影响数据完整性
+  - [x] 支持集群快速自动扩容
+  - [ ] 支持长连接CDN，解决跨国跨地区长连接不稳定问题
 
-
-
-快速运行
----------------
-
+## 快速运行
 
 ### Docker部署（单机）
-
 ```shell
-
 docker run -d -p 15001:5001 -p 15100:5100 -p 15172:5172 -p 15200:5200 -p 15210:5210 -p 15300:5300  --name wukongim -v ./wukongim:/root/wukongim  wukongim/wukongim:v2.0.0-beta-20240428
-
 ```
 
 ### Docker部署（分布式）
-    
-```yaml
-
+```shell
 git clone https://github.com/WuKongIM/WuKongIM.git
 
 cd ./WuKongIM/docker/cluster
 
 sudo docker compose up -d
+```
+
+## 源码开发
+
+### 单机
+
+```shell
+go run main.go
+
+(或 go run main.go --config config/wk.yaml)
 
 ```
 
+### 分布式
+
+```yaml
+# 启动第一个节点
+go run main.go --config  ./exampleconfig/cluster1.yaml
+
+# 启动第二个节点
+go run main.go --config  ./exampleconfig/cluster2.yaml
+
+# 启动第三个节点
+go run main.go --config  ./exampleconfig/cluster3.yaml
+
+```
 
 ### 访问
 
-查询系统信息: http://127.0.0.1:15001/varz
+查询系统信息: [http://127.0.0.1:15001/varz](http://127.0.0.1:15001/varz)
 
-查看监控信息： http://127.0.0.1:15300/web
+查看监控信息： [http://127.0.0.1:15300/web](http://127.0.0.1:15300/web)
 
-客户端演示地址：http://127.0.0.1:15172/chatdemo (分布式地址为：http://127.0.0.1:15172/login)
+客户端演示地址：[http://127.0.0.1:15172/chatdemo](http://127.0.0.1:15172/chatdemo) (分布式地址为：[http://127.0.0.1:15172/login](http://127.0.0.1:15172/login))
 
 端口解释:
 
-```
-15001: api端口
-15100: tcp长连接端口
-15172: demo端口
-15200: websocket长连接端口
-15300: 监控系统端口
-```
+`15001: api端口 15100: tcp长连接端口 15172: demo端口 15200: websocket长连接端口 15300: 监控系统端口`
 
 
 
-
-配套SDK源码和Demo
----------------
-
-
-
-| 项目名 | Github地址 | Example | 文档 | 说明 |
-| ---- | ---------- | --------- | ---- |  ---- |
-|   WuKongIM   |   [Github](https://github.com/WuKongIM/WuKongIM)         |     无 |  [文档](https://githubim.com/sdk/android.html)  &nbsp;&nbsp;&nbsp;&nbsp;       |    悟空IM通讯端，负责长连接维护，消息投递等等 |
-|   WuKongIMAndroidSDK   |   [Github](https://github.com/WuKongIM/WuKongIMAndroidSDK)         |     [Example](https://github.com/WuKongIM/WuKongIMAndroidSDK/tree/master/app) | [文档](https://githubim.com/sdk/android.html)    |    悟空IM的Android SDK  |
-|   WuKongIMiOSSDK   |   [Github](https://github.com/WuKongIM/WuKongIMiOSSDK)         |     [Example](https://github.com/WuKongIM/WuKongIMiOSSDK/tree/main/Example)  | [文档](https://githubim.com/sdk/ios.html)     |    悟空IM的iOS SDK  |
-|   WuKongIMUniappSDK   |   [Github](https://github.com/WuKongIM/WuKongIMUniappSDK)         |     [Example](https://github.com/WuKongIM/WuKongIMUniappSDK/tree/main/examples)  | [文档](https://githubim.com/sdk/uniapp.html)      |    悟空IM的 Uniapp SDK  |
-|   WuKongIMJSSDK   |   [Github](https://github.com/WuKongIM/WuKongIMJSSDK)         |     [Example](https://github.com/WuKongIM/WuKongIMJSSDK/tree/main/examples)   | [文档](https://githubim.com/sdk/javascript.html)     |    悟空IM的 JS SDK  |
-|   WuKongIMFlutterSDK   |    [Github](https://github.com/WuKongIM/WuKongIMFlutterSDK)        |    [Example](https://github.com/WuKongIM/WuKongIMFlutterSDK/tree/master/example)   |[文档](https://githubim.com/sdk/flutter.html)    |    悟空IM的 Flutter SDK |
-|   WuKongIMReactNativeDemo   |   [Github](https://github.com/wengqianshan/WuKongIMReactNative)         |     无  |  无  |    悟空IM的 React Native Demo(由贡献者 [wengqianshan](https://github.com/wengqianshan) 提供)  |
-
-
-
-图解
----------------
+## 图解
 
 总体架构图
 
-![总体架构图](./docs/architecture/architecture2.png)
+
+![](http://localhost:63342/markdownPreview/713228306/docs/architecture/architecture2.png?_ijt=jplti0t3trcq6irctv35vaufb0)
 
 业务系统对接
 
-![image](./docs/业务系统对接图.png)
-
+![[Pasted image 20240731070930.png]]
 
 Webhook对接图
 
-![image](./docs/webhook.png)
+![image](http://localhost:63342/markdownPreview/713228306/docs/webhook.png?_ijt=jplti0t3trcq6irctv35vaufb0)
 
-
-适用场景
----------------
+## 适用场景
 
 #### 即时通讯
 
-* 群频道支持
-* 个人频道支持
-* 消息永久存储
-* 离线消息推送支持
-* 最近会话维护
+- 群频道支持
+- 个人频道支持
+- 消息永久存储
+- 离线消息推送支持
+- 最近会话维护
 
 #### 消息推送/站内消息
 
-* 群频道支持
-* 个人频道支持
-* 离线消息推送支持
+- 群频道支持
+- 个人频道支持
+- 离线消息推送支持
 
 #### 物联网通讯
 
-* mqtt协议支持（待开发）
-* 支持发布与订阅
+- mqtt协议支持（待开发）
+- 支持发布与订阅
 
 #### 音视频信令服务器
 
-* 支持临时指令消息投递
+- 支持临时指令消息投递
 
 #### 直播弹幕
 
-* 临时消息投递
+- 临时消息投递
 
-* 临时订阅者支持
+- 临时订阅者支持
+
 
 #### 客服系统
 
-* 客服频道支持
+- 客服频道支持
 
-* 消息支持投递给第三方服务器
+- 消息支持投递给第三方服务器
 
-* 第三方服务器可决定分配指定的订阅者成组投递
+- 第三方服务器可决定分配指定的订阅者成组投递
+
 
 #### 实时AI反馈
 
-* 支持客户端发的消息推送给第三方服务器，第三方服务器反馈给AI后返回的结果再推送给客户端
+- 支持客户端发的消息推送给第三方服务器，第三方服务器反馈给AI后返回的结果再推送给客户端
 
 #### 即时社区
 
-* 社区频道支持
-* 支持topic模式的消息投递
+- 社区频道支持
+- 支持topic模式的消息投递
 
-监控截图
----------------
+## 监控截图
 
-![image](./docs/screen1.png)
-![image](./docs/screen2.png)
-![image](./docs/screen3.png)
-![image](./docs/screen4.png)
-![image](./docs/screen5.png)
+![image](http://localhost:63342/markdownPreview/713228306/docs/screen1.png?_ijt=jplti0t3trcq6irctv35vaufb0) ![image](http://localhost:63342/markdownPreview/713228306/docs/screen2.png?_ijt=jplti0t3trcq6irctv35vaufb0) ![image](http://localhost:63342/markdownPreview/713228306/docs/screen3.png?_ijt=jplti0t3trcq6irctv35vaufb0) ![image](http://localhost:63342/markdownPreview/713228306/docs/screen4.png?_ijt=jplti0t3trcq6irctv35vaufb0) ![image](http://localhost:63342/markdownPreview/713228306/docs/screen5.png?_ijt=jplti0t3trcq6irctv35vaufb0)
 
-Star
----------------
+## Star
 
 我们团队一直致力于即时通讯的研发，需要您的鼓励，如果您觉得本项目对您有帮助，欢迎点个star，您的支持是我们最大的动力。
 
-案例展示
----------------
+## 案例展示
 
 **项目名**
 
@@ -250,33 +224,13 @@ TangSengDaoDao
 
 **开源地址**
 
-https://github.com/TangSengDaoDao/TangSengDaoDaoServer
+[https://github.com/TangSengDaoDao/TangSengDaoDaoServer](https://github.com/TangSengDaoDao/TangSengDaoDaoServer)
 
 **截图**
 
-||||
-|:---:|:---:|:--:|
-|![](./docs/case/tsdaodao/screenshot/conversationlist.webp)|![](./docs/case/tsdaodao/screenshot/messages.webp)|![](./docs/case/tsdaodao/screenshot/robot.webp)|
 
-
-|||          |
-|:---:|:---:|:-------------------:|
-
-![](./docs/case/tsdaodao/screenshot/pc11.png)
+|![](http://localhost:63342/markdownPreview/713228306/docs/case/tsdaodao/screenshot/conversationlist.webp?_ijt=jplti0t3trcq6irctv35vaufb0)|![](http://localhost:63342/markdownPreview/713228306/docs/case/tsdaodao/screenshot/messages.webp?_ijt=jplti0t3trcq6irctv35vaufb0)|![](http://localhost:63342/markdownPreview/713228306/docs/case/tsdaodao/screenshot/robot.webp?_ijt=jplti0t3trcq6irctv35vaufb0)|
 
 
 
-
-Wechat
----------------
-
-如果有需要，加我拉你进群，微信号：wukongimgo
-
-![image](./wechat.jpg)
-
-
-
-License
----------------
-
-WuKongIM is licensed under the [Apache License 2.0](./LICENSE).
+![](http://localhost:63342/markdownPreview/713228306/docs/case/tsdaodao/screenshot/pc11.png?_ijt=jplti0t3trcq6irctv35vaufb0)
